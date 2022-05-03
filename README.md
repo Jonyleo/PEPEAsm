@@ -14,7 +14,7 @@ Sublime text package for syntax highlighting of the PEPE assembly language
 - Open Sublime Text
 - `Ctrl+Shift+P` or `Cmd+Shift+P` on Mac
 - Select `Package Control: Add Repository`
-- Paste the url to (this repo)[https://github.com/Jonyleo/PEPEAsm]
+- Paste the url to [this repo](https://github.com/Jonyleo/PEPEAsm)
 - Click enter
 - `Ctrl+Shift+P` or `Cmd+Shift+P` on Mac
 - Select `Package Control: Install Package`
