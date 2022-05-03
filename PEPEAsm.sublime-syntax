@@ -1,6 +1,6 @@
 %YAML 1.2
 ---
-name: PEPEasm
+name: PEPEAsm
 file_extensions: [asm]
 scope: asm
 
