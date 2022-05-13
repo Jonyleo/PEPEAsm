@@ -2,7 +2,7 @@
 ---
 name: PEPEAsm
 file_extensions: [asm]
-scope: asm
+scope: pepeasm
 
 variables:
   ops: "MOV|SWAP|MOVBS|MOVB|USP|NEG|NOT|PUSH|POP|JMP|CALL|CALLF|ADD|ADDC|SUB|SUBB|DEC|INC|CMP|MUL|DIV|MOD|AND|OR|XOR|TEST|SHRA|SHLA|BIT|SET|CLR|CPL|SHR|SHL|ROR|ROL|RORC|ROLC|JZ|JEQ|JNZ|JNE|JN|JNN|JP|JNP|JC|JB|JNC|JAE|JV|JNV|JLT|JLE|JGT|JGE|JA|JBE|SWE|RET|RETF|RFE|NOP|PUSHC|POPC|EI|EI0|EI1|EI2|EI3|SETC|EDMA|DI|DI0|DI1|DI2|DI3|CLRC|DDMA|CPLC|WAIT|PROCESS|YIELD"
@@ -17,28 +17,28 @@ variables:
 contexts:
   main:
     - match: ;
-      scope: comment
+      scope: comment.pepeasm
       push: inside-comment
 
     - match: \"
-      scope: string
+      scope: string.pepeasm
       push: inside-string
 
     - match: CLINE
-      scope: variable.function
+      scope: variable.function.pepeasm
       push: inside-comment
 
     - match: "{{identifier}}:"
-      scope: keyword.operator
+      scope: keyword.operator.pepeasm
 
     - match: \b({{ops}})\b
-      scope: variable.function
+      scope: variable.function.pepeasm
 
     - match: "{{operators}}"
-      scope: keyword.operator
+      scope: keyword.operator.pepeasm
 
     - match: \b({{dirs}})\b
-      scope: entity.name.function
+      scope: entity.name.function.pepeasm
 
     - include: registers
     - include: contants
@@ -46,17 +46,17 @@ contexts:
 
   registers:
     - match: \b({{regs}})\b
-      scope: entity.name.function
+      scope: entity.name.function.pepeasm
 
   contants:
     - match: \b({{digit}}{{hexa}}*(H|h))\b
-      scope: constant.numeric
+      scope: constant.numeric.pepeasm
     - match: \b({{digit}}+(D|d))\b
-      scope: constant.numeric
+      scope: constant.numeric.pepeasm
     - match: \b((0|1)+(B|b))\b
-      scope: constant.numeric
+      scope: constant.numeric.pepeasm
     - match: \b{{digit}}+\b
-      scope: constant.numeric
+      scope: constant.numeric.pepeasm
 
   inside-comment:
     - meta_scope: comment
